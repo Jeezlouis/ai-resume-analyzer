@@ -29,7 +29,7 @@ const Resume = () => {
             if(!resume) return;
 
             const data = JSON.parse(resume);
-
+            
             const resumeBlob = await fs.read(data.resumePath);
             if(!resumeBlob) return;
 
@@ -41,7 +41,7 @@ const Resume = () => {
             if(!imageBlob) return;
             const imageUrl = URL.createObjectURL(imageBlob);
             setImageUrl(imageUrl);
-
+            
             setFeedback(data.feedback);
             console.log({resumeUrl, imageUrl, feedback: data.feedback });
         }
